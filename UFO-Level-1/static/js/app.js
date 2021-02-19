@@ -19,4 +19,3 @@ function clearBuildTable(dataToBeInserted) {
 
 clearBuildTable(rawData);
 
-var inputDate = d3.select("#datetime");
