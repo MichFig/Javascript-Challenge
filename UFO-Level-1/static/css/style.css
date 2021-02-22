@@ -16,7 +16,7 @@ body {
 .wrapper {
   position: relative;
   min-height: 100%;
-  padding-bottom: 130px;
+  padding-bottom: 100px;
   overflow: auto;
 }
 
@@ -35,17 +35,20 @@ body {
   position: absolute;
   right: 0;
   bottom: 0;
-  left: 0;
-  padding: 0px;
-  background: #4beb3d;
+  left: 300;
+  padding: 5px;
+  background #4e5d6c;
   
 }
 
-.navbar-brand {
+.navbar-default {
   padding: 5px;
   margin: 0;
   color:#4beb3d;
+ 
 }
+
+
 /* This CSS styles the ufo icon in the navbar */
 .nav-ufo {
   position: fixed;
@@ -100,7 +103,7 @@ select {
   height: 550px;
   padding: 20px;
   margin: 0;
-  background: black;
+  background: #2b3e50;
   background-image: url("../images/nasa.jpg");
   background-attachment: fixed;
   background-position: bottom center;
@@ -123,22 +126,22 @@ select {
 /* input placeholder color changes */
 .form-control::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
-  color: #8e979f;
+  color: #4beb3d;
 }
 
 .form-control::-moz-placeholder {
   /* Firefox 19+ */
-  color: #8e979f;
+  color: #4beb3d;
 }
 
 .form-control:-ms-input-placeholder {
   /* IE 10+ */
-  color: #8e979f;
+  color: #4beb3d;
 }
 
 .form-control:-moz-placeholder {
   /* Firefox 18- */
-  color: #8e979f;
+  color: #4beb3d;
 }
 
 /* media queries which will only be activated at specific screen sizes */
