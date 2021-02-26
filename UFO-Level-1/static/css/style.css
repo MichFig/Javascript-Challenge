@@ -9,6 +9,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
+  
 
 }
 
@@ -41,13 +42,6 @@ body {
   
 }
 
-.navbar {
-  padding: 5px;
-  margin: 0;
-   
-}
-
-
 /* This CSS styles the ufo icon in the navbar */
 .nav-ufo {
   position: fixed;
@@ -56,6 +50,12 @@ body {
   width: 55px;
   color: white;
   
+}
+
+.navbar {
+  padding: 5px;
+  margin: 0;
+   
 }
 
 /* Adding styles to the aside and filter form */

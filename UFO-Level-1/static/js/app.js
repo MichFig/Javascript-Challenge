@@ -1,51 +1,36 @@
 // from data.js
-var tableData = data;
+var rawData = data;
 
-//populate data information into the HTML table
-var tbody = d3.select("tbody");
+// Check data 
+console.log(data)
 
-//UF sighting vlues for each column
-var displayAll = tableData.forEach((alienData) => {
-    console.log(alienData);
-    //append on table row 'tr' fpr each UF sighting object
-    var row = tbody.append("tr");
-    //use object entries to show each UFO sighting 
-    Object.entries(alienData).forEach(([key, value]) => {
-        //append the cell of for each value
-      var cell = row.append("td");
-      cell.text(value);
-    });
-  });
+// Get a reference to the table body
+var tableBody = d3.select("tbody");
 
-
-//select the button 
-var button = d3.select("#filter-btn");
-button.on("click", function() {
-    //clear out the html when the function is run????
-    tbody.html("");
-
-    //select the input date
-    var inputElement = d3.select("#input");
-    //get the value of th input date state
-    var inputValue = inputElement.property("value");
-    //filter the data that is equal to the date and time
-    var filteredData = tableData.filter(sighting => sighting.datetime === inputValue ||
-      sighting.city === inputValue ||
-      sighting.state === inputValue ||
-      sighting.country === inputValue ||
-      sighting.shape === inputValue);
-
-    filteredData.forEach(function(selections) {
-        //append one table row 'tr' for each ufo sighting for the specific date
-        var row = tbody.append("tr");
-        //use 'object.entries'
-        Object.entries(selections).forEach(function([key,value]){
-            //append a cell to the row for each value
+// Define function to clear table and add new data
+function clearBuildTable(dataToBeInserted) {
+    tableBody.html("");
+    // Adding all the rows and cells
+    dataToBeInserted.forEach((ufoSighting) => {
+        var row = tableBody.append("tr");
+        Object.entries(ufoSighting).forEach(([key, value]) => {
             var cell = row.append("td");
             cell.text(value);
 
         });
-
-
     });
-});
+};
+clearBuildTable(rawData);
+
+// Define a function to filter
+function clickFilter() {
+    // Get a refernce to the DateTime 
+    var inputDate = d3.select("#datetime").property("value");
+    let filteredData = rawData;
+    if (inputDate) {filteredData = filteredData.filter(row => row.datetime === inputDate);}
+    clearBuildTable(filteredData);
+    };
+
+
+// 
+d3.selectAll("#filter-btn").on("click", clickFilter);
